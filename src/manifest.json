@@ -1,0 +1,17 @@
+{
+  "name": "chrome extension with react & webpack",
+  "description": "",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "background": { "service_worker": "background.bundle.js" },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.bundle.js"]
+    }
+  ]
+}
