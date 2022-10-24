@@ -1,5 +1,7 @@
 module.exports = {
   env: {
+    node: true,
+    webextensions: true,
     browser: true,
     es2021: true,
   },

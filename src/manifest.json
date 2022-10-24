@@ -1,0 +1,28 @@
+{
+  "name": "chrome extension with react & webpack",
+  "description": "",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "icons": {
+    "16": "extensionIcon/icon-16.png",
+    "32": "extensionIcon/icon-32.png",
+    "48": "extensionIcon/icon-48.png",
+    "128": "extensionIcon/icon-128.png"
+  },
+  "background": { "service_worker": "./background/index.bundle.js" },
+  "action": {
+    "default_popup": "popup/index.html"
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "js": ["./contentScripts/index.bundle.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "chrome_url_overrides": {
+    "newtab": "newtab/index.html"
+  },
+  "devtools_page": "devtools/index.html",
+  "options_page": "options/index.html"
+}
