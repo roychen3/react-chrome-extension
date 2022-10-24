@@ -4,7 +4,7 @@ const common = require('./common.js');
 module.exports = merge(common, {
   mode: 'development',
   devServer: {
-    open: true,
+    open: ['/popup.html'],
     port: 3000,
   },
 });
