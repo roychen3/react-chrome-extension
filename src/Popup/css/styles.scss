@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 300px;
+}
+
+#root {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+
+  .icon-box {
+    width: 2rem;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.card-container {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  border-color: darkgrey;
+  border-radius: 7px;
+  border-width: 2px;
+  border-style: solid;
+  padding: 1rem;
+
+  .name {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .body {
+    margin-bottom: 1.5rem;
+  }
+
+  .email {
+    text-align: right;
+    color: darkgrey;
+    font-size: 0.875rem;
+  }
+}
