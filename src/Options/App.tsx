@@ -3,16 +3,18 @@ import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-const App = () => {
-  const [color, setColor] = useState('');
-  const [like, setLike] = useState(false);
-  const [status, setStatus] = useState('');
+import FavoriteColor from './FavoriteColor';
 
-  const handleColorChange = (event) => {
+const App = () => {
+  const [color, setColor] = useState<string>('');
+  const [like, setLike] = useState<boolean>(false);
+  const [status, setStatus] = useState<string>('');
+
+  const handleColorChange = (event: any) => {
     setColor(event.target.value);
   };
 
-  const handleLikeChange = (event) => {
+  const handleLikeChange = (event: any) => {
     setLike(event.target.checked);
   };
 
@@ -66,30 +68,14 @@ const App = () => {
           Learn React
         </a>
       </header>
-      Favorite color:
-      <select id='color' value={color} onChange={handleColorChange}>
-        <option value='#ffffff'>ffffff</option>
-        <option value='#5f6a82'>5f6a82</option>
-        <option value='#2c313c'>2c313c</option>
-        <option value='#282c34'>282c34</option>
-        <option value='#1c1d20'>1c1d20</option>
-        <option value='#00a1f1'>00a1f1</option>
-        <option value='#00527a'>00527a</option>
-        <option value='#23282e'>23282e</option>
-      </select>
-      <label>
-        <input
-          type='checkbox'
-          id='like'
-          checked={like}
-          onChange={handleLikeChange}
-        />
-        I like colors.
-      </label>
-      <div id='status'>{status}</div>
-      <button id='save' onClick={saveOptions}>
-        Save
-      </button>
+      <FavoriteColor
+        color={color}
+        like={like}
+        status={status}
+        handleColorChange={handleColorChange}
+        handleLikeChange={handleLikeChange}
+        saveOptions={saveOptions}
+      />
     </div>
   );
 };

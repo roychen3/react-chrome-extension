@@ -29,7 +29,12 @@ module.exports = {
         },
       },
       {
-        test: /\.m?js$/,
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.m?(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
@@ -39,6 +44,9 @@ module.exports = {
         },
       },
     ],
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
   },
   plugins: [
     new CopyWebpackPlugin({
@@ -84,7 +92,7 @@ module.exports = {
       cache: false,
     }),
     new ESLintPlugin({
-      extensions: ['js', 'ts'],
+      extensions: ['js', 'jsx', 'mjs', 'tsx', 'ts'],
     }),
   ],
   output: {
